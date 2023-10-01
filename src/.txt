@@ -1,0 +1,34 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+const TransactionsTable = () => {
+  const [transactions, setTransactions] = useState([]);
+  const [selectedMonth, setSelectedMonth] = useState('March');
+  const [searchText, setSearchText] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const fetchTransactions = async () => {
+    try {
+      const response = await axios.get(`/list-transactions?month=${selectedMonth}&search=${searchText}&page=${currentPage}`);
+      setTransactions(response.data.transactions);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchTransactions();
+  }, [selectedMonth, searchText, currentPage]);
+
+  return (
+    <div>
+      {/* Month selection dropdown */}
+      {/* Search input */}
+      {/* Table listing transactions */}
+      {/* Pagination controls */}
+    </div>
+  );
+};
+
+export default TransactionsTable;
+/////////////////////////////////////////////////////////////////////////////////////////////////
