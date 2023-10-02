@@ -72,13 +72,16 @@ function TransactionsStatistics() {
       </div>
       <div className="statistics">
         <div className="statistic-box">
-          <h2 className='statisticsh2'>Total Amount of Sale {totalAmount}</h2>
+          <h2 className='statisticsh2'>Total Amount of Sale </h2>
+          <h3>{totalAmount}</h3>
         </div>
         <div className="statistic-box">
-          <h2 className='statisticsh2'>Total Sold Items {totalSold}</h2>
+          <h2 className='statisticsh2'>Total Sold Items</h2>
+          <h3>{totalSold}</h3>
         </div>
         <div className="statistic-box">
-          <h2 className='statisticsh2'> Total Not Sold Items {totalNotSold}</h2>
+          <h2 className='statisticsh2'> Total Not Sold Items </h2>
+          <h3>{totalNotSold}</h3>
         </div>
       </div>
     </div>
