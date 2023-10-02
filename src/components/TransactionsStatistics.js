@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 function TransactionsStatistics() {
   const [data, setData] = useState([]);
-  const [selectedMonth, setSelectedMonth] = useState('March');
+  const [selectedMonth, setSelectedMonth] = useState('');
   const [totalAmount, setTotalAmount] = useState(0);
   const [totalSold, setTotalSold] = useState(0);
   const [totalNotSold, setTotalNotSold] = useState(0);
@@ -55,6 +55,7 @@ function TransactionsStatistics() {
       <div>
         <label>Select Month</label>
         <select value={selectedMonth} onChange={handleMonthChange}>
+          <option value="">select month</option>
           <option value="January">January</option>
           <option value="February">February</option>
           <option value="March">March</option>
