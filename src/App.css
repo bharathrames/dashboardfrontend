@@ -16,7 +16,6 @@ img{
   border-radius: 10px;
 }
 
-/* Style the table */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -41,7 +40,7 @@ tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
-/* Style the select input */
+
 select, input[type="text"] {
   margin: 10px;
   padding: 8px;
@@ -49,7 +48,6 @@ select, input[type="text"] {
   border-radius: 5px;
 }
 
-/* Style the buttons */
 .buttontable {
   background-color: #333;
   color: white;
