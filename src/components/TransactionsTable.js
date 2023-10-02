@@ -62,7 +62,7 @@ function TransactionsTable() {
   return (
     <div className='maincontainer'>
       <h1>Transactions Table</h1>
-      <label>Select Month:</label>
+      <label>Select Month</label>
       <select value={selectedMonth} onChange={handleMonthChange}>
         {Array.from({ length: 12 }, (_, i) => (
           <option key={i + 1} value={(i + 1).toString()}>
