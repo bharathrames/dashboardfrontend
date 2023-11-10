@@ -9,7 +9,7 @@ const TransactionsBarChart = () => {
 
   useEffect(() => {
     
-    fetch('https://dashboard-uml0.onrender.com/data')
+    fetch('https://dashboard-uml0.onrender.com/combinedData')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
