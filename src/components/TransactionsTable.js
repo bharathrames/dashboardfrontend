@@ -9,7 +9,6 @@ function TransactionsTable() {
   useEffect(() => {
     loadTransactions();
   }, [selectedMonth, currentPage]); 
-
   const loadTransactions = async () => {
     try {
       const response = await fetch(
