@@ -8,24 +8,21 @@ function TransactionsTable() {
 
   useEffect(() => {
     loadTransactions();
-  }, [selectedMonth, currentPage]); 
+  }, [selectedMonth, currentPage, searchText]); 
+
   const loadTransactions = async () => {
     try {
-      const response = await fetch(
-        `https://dashboard-uml0.onrender.com/data`
-      );
+      const response = await fetch(`https://dashboard-uml0.onrender.com/combinedData`);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
       const data = await response.json();
 
-      
       const filteredTransactions = data.filter((transaction) => {
-        const transactionMonth = new Date(transaction.dateOfSale).getMonth() + 1; 
+        const transactionMonth = new Date(transaction.dateOfSale).getMonth() + 1;
         return transactionMonth.toString() === selectedMonth;
       });
 
-    
       const searchedTransactions = filteredTransactions.filter((transaction) => {
         return (
           transaction.title.toLowerCase().includes(searchText.toLowerCase()) ||
@@ -40,6 +37,7 @@ function TransactionsTable() {
     }
   };
 
+  // ...
   const handleMonthChange = (event) => {
     setSelectedMonth(event.target.value);
   };
@@ -71,7 +69,7 @@ function TransactionsTable() {
       </select>
       <input
         type="text"
-        placeholder="Search Transaction"
+        placeholder="Search Transaction..."
         value={searchText}
         onChange={handleSearchChange}
       />
