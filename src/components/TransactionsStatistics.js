@@ -14,7 +14,7 @@ function TransactionsStatistics() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('https://dashboard-uml0.onrender.com/data');
+      const response = await fetch('https://dashboard-uml0.onrender.com/combinedData');
       const jsonData = await response.json();
       setData(jsonData);
     } catch (error) {
